@@ -3,11 +3,13 @@ package com.skilldistillery.filmquery.database;
 import static org.junit.jupiter.api.Assertions.*;
 
 import java.sql.SQLException;
+import java.util.List;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import com.skilldistillery.filmquery.entities.Actor;
 import com.skilldistillery.filmquery.entities.Film;
 
 class DatabaseAccessTests {
@@ -29,4 +31,12 @@ class DatabaseAccessTests {
     assertNull(f);
   }
 
+  @Test
+  void test_getActorBYFilmId_with_invalid_id_returns_error() throws SQLException {
+    List<Actor> f = db.findActorsByFilmId(-42);
+    assertEquals( 0, f.size());
+    
+    
+  }
+  
 }

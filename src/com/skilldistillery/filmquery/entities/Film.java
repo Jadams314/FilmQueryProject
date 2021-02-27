@@ -1,5 +1,6 @@
 package com.skilldistillery.filmquery.entities;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Film {
@@ -7,19 +8,19 @@ public class Film {
 	private String title;
 	private String description;
 	private String releaseYear;
-	private int langaugeId;
+	private String langaugeId;
 	private double rentalDuration;
 	private double rentalRate;
 	private Integer length;
-	double replacementCost;
+	private double replacementCost;
 	private String rating;
 	private String specialFeatures;
-	private List<Actor> Actor;
+	private List<Actor> actors = new ArrayList<>();
 	
 	public Film() {}
 
 
-	public Film(int id, String title, String description, String releaseYear, int langaugeId, double rentalDuration,
+	public Film(int id, String title, String description, String releaseYear, String langaugeId, double rentalDuration,
 			double rentalRate, Integer length, double replacementCost, String rating, String specialFeatures) {
 		super();
 		this.id = id;
@@ -33,16 +34,19 @@ public class Film {
 		this.replacementCost = replacementCost;
 		this.rating = rating;
 		this.specialFeatures = specialFeatures;
+
 	}
 
 
-	public List<Actor> getActor(int filmId) {
-		return Actor;
+
+
+	public List<Actor> getActors() {
+		return actors;
 	}
 
 
-	public void setActor(List<Actor> actor) {
-		Actor = actor;
+	public void setActors(List<Actor> actor) {
+		this.actors = actor;
 	}
 
 
@@ -86,12 +90,12 @@ public class Film {
 	}
 
 
-	public int getLangaugeId() {
+	public String getLangaugeId() {
 		return langaugeId;
 	}
 
 
-	public void setLangaugeId(int langaugeId) {
+	public void setLangaugeId(String langaugeId) {
 		this.langaugeId = langaugeId;
 	}
 
@@ -183,11 +187,12 @@ public class Film {
 
 	@Override
 	public String toString() {
-		return "Film id : " + id + "| Title :" + title + "| description :" + description + "| Release Year :" + releaseYear
-				+ "| Langauge Id :" + langaugeId + "| Rental Duration :" + rentalDuration + "| Rental Rate :"
-				+ rentalRate + "| Length :" + length + "| Replacement Cost :" + replacementCost + "| Rating :" + rating
-				+ "| Special Features :" + specialFeatures + " |";
+		return "Title : " + title + ", description : " + description + ", releaseYear : " + releaseYear
+				+ ", langauge : " + langaugeId + ", actors : " + actors;
 	}
+
+
+
 	
 	
 }

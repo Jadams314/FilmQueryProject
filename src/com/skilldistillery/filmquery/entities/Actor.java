@@ -53,7 +53,7 @@ public class Actor {
 
 	@Override
 	public String toString() {
-		return "Actor id :" + actorId + "| First Name :" + firstName + "| Last Name :" + lastName + " |";
+		return "Actor: " + firstName + " " + lastName ;
 	}
 	
 	
