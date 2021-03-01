@@ -1,13 +1,11 @@
 package com.skilldistillery.filmquery.app;
 
 import java.sql.SQLException;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Scanner;
 
 import com.skilldistillery.filmquery.database.DatabaseAccessor;
 import com.skilldistillery.filmquery.database.DatabaseAccessorObject;
-import com.skilldistillery.filmquery.entities.Actor;
 import com.skilldistillery.filmquery.entities.Film;
 
 public class FilmQueryApp {
@@ -16,17 +14,8 @@ public class FilmQueryApp {
 
 	public static void main(String[] args) throws SQLException {
 		FilmQueryApp app = new FilmQueryApp();
-		// app.test();
 		app.launch();
 	}
-
-	// private void test() throws SQLException {
-	// Film film = db.findFilmById(1);
-	// System.out.println(film);
-
-//	  List<Actor> act = db.findActorsByFilmId(1);
-//	  System.out.print(act);
-//  }
 
 	private void launch() throws SQLException {
 		Scanner input = new Scanner(System.in);
@@ -87,9 +76,7 @@ public class FilmQueryApp {
 			}
 
 		} catch (SQLException e) {
-			System.out.println("Sorry but that is not a valid id. Please try again or search");
-			System.out.println("By a keyword");
-			startUserInterface(input);
+			e.printStackTrace();
 		}
 
 	}
@@ -117,7 +104,6 @@ public class FilmQueryApp {
 			}
 
 		} catch (SQLException e) {
-			System.out.println("That didnt work");
 			e.printStackTrace();
 		}
 	}
