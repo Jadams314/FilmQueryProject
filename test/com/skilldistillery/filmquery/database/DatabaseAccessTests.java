@@ -13,30 +13,29 @@ import com.skilldistillery.filmquery.entities.Actor;
 import com.skilldistillery.filmquery.entities.Film;
 
 class DatabaseAccessTests {
-  private DatabaseAccessor db;
+	private DatabaseAccessor db;
 
-  @BeforeEach
-  void setUp() throws Exception {
-    db = new DatabaseAccessorObject();
-  }
+	@BeforeEach
+	void setUp() throws Exception {
+		db = new DatabaseAccessorObject();
+	}
 
-  @AfterEach
-  void tearDown() throws Exception {
-    db = null;
-  }
+	@AfterEach
+	void tearDown() throws Exception {
+		db = null;
+	}
 
-  @Test
-  void test_getFilmById_with_invalid_id_returns_null() throws SQLException {
-    Film f = db.findFilmById(-42);
-    assertNull(f);
-  }
+	@Test
+	void test_getFilmById_with_invalid_id_returns_null() throws SQLException {
+		Film f = db.findFilmById(-42);
+		assertNull(f);
+	}
 
-  @Test
-  void test_getActorBYFilmId_with_invalid_id_returns_error() throws SQLException {
-    List<Actor> f = db.findActorsByFilmId(-42);
-    assertEquals( 0, f.size());
-    
-    
-  }
-  
+	@Test
+	void test_getActorBYFilmId_with_invalid_id_returns_error() throws SQLException {
+		List<Actor> f = db.findActorsByFilmId(-42);
+		assertEquals(0, f.size());
+
+	}
+
 }

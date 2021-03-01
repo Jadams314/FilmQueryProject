@@ -104,14 +104,14 @@ public class FilmQueryApp {
 
 			if (films.size() > 0) {
 				System.out.println("Here are the films I found that match " + search);
-				
+
 				for (Film currentFilm : films) {
 					System.out.println(currentFilm);
-					
+
 					startUserInterface(input);
 				}
 
-			}else {
+			} else {
 				System.out.println("Sorry I could not find a match with " + search);
 				startUserInterface(input);
 			}

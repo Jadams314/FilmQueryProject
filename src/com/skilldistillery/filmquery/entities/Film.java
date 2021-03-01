@@ -16,9 +16,9 @@ public class Film {
 	private String rating;
 	private String specialFeatures;
 	private List<Actor> actors = new ArrayList<>();
-	
-	public Film() {}
 
+	public Film() {
+	}
 
 	public Film(int id, String title, String description, String releaseYear, String langaugeId, double rentalDuration,
 			double rentalRate, Integer length, double replacementCost, String rating, String specialFeatures) {
@@ -37,128 +37,101 @@ public class Film {
 
 	}
 
-
-
-
 	public List<Actor> getActors() {
 		return actors;
 	}
-
 
 	public void setActors(List<Actor> actor) {
 		this.actors = actor;
 	}
 
-
 	public int getId() {
 		return id;
 	}
-
 
 	public void setId(int id) {
 		this.id = id;
 	}
 
-
 	public String getTitle() {
 		return title;
 	}
-
 
 	public void setTitle(String title) {
 		this.title = title;
 	}
 
-
 	public String getDescription() {
 		return description;
 	}
-
 
 	public void setDescription(String description) {
 		this.description = description;
 	}
 
-
 	public String getReleaseYear() {
 		return releaseYear;
 	}
-
 
 	public void setReleaseYear(String releaseYear) {
 		this.releaseYear = releaseYear;
 	}
 
-
 	public String getLangaugeId() {
 		return langaugeId;
 	}
-
 
 	public void setLangaugeId(String langaugeId) {
 		this.langaugeId = langaugeId;
 	}
 
-
 	public double getRentalDuration() {
 		return rentalDuration;
 	}
-
 
 	public void setRentalDuration(double rentalDuration) {
 		this.rentalDuration = rentalDuration;
 	}
 
-
 	public double getRentalRate() {
 		return rentalRate;
 	}
-
 
 	public void setRentalRate(double rentalRate) {
 		this.rentalRate = rentalRate;
 	}
 
-
 	public Integer getLength() {
 		return length;
 	}
-
 
 	public void setLength(Integer length) {
 		this.length = length;
 	}
 
-
 	public double getReplacementCost() {
 		return replacementCost;
 	}
-
 
 	public void setReplacementCost(double replacementCost) {
 		this.replacementCost = replacementCost;
 	}
 
-
 	public String getRating() {
 		return rating;
 	}
-
 
 	public void setRating(String rating) {
 		this.rating = rating;
 	}
 
-
 	public String getSpecialFeatures() {
 		return specialFeatures;
 	}
 
-
 	public void setSpecialFeatures(String specialFeatures) {
 		this.specialFeatures = specialFeatures;
 	}
-
 
 	@Override
 	public int hashCode() {
@@ -167,7 +140,6 @@ public class Film {
 		result = prime * result + ((releaseYear == null) ? 0 : releaseYear.hashCode());
 		return result;
 	}
-
 
 	@Override
 	public boolean equals(Object obj) {
@@ -184,15 +156,10 @@ public class Film {
 		return true;
 	}
 
-
 	@Override
 	public String toString() {
 		return "Title : " + title + ", description : " + description + ", releaseYear : " + releaseYear
 				+ ", langauge : " + langaugeId + ", actors : " + actors;
 	}
 
-
-
-	
-	
 }
